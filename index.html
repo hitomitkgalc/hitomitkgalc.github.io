@@ -22,6 +22,48 @@
   a{text-decoration:none;color:inherit}
   .container{max-width:1100px;margin:0 auto;padding:0 40px}
   .label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--peach);margin-bottom:10px}
+
+@media (max-width: 768px) {
+
+  /* ── Global ── */
+  body, section { overflow-x: hidden !important; }
+  .container { padding: 0 20px !important; }
+
+  /* ── Nav ── */
+  nav > .container { flex-wrap: wrap !important; gap: 12px !important; }
+  nav > .container > div:last-child > a:not(:last-child) { display: none !important; }
+
+  /* ── Hero ── */
+  #v2-about { flex-direction: column !important; min-height: unset !important; }
+  #v2-about > div:first-child {
+    width: 100% !important;
+    min-height: unset !important;
+    max-height: 320px !important;
+    padding: 20px 20px 56px !important;
+  }
+  #v2-about > div:last-child { padding: 48px 20px 60px !important; }
+  #v2-about h1 { font-size: clamp(32px, 8vw, 52px) !important; }
+  #v2-about > div:last-child > div > div:first-child { flex-wrap: wrap !important; }
+
+  /* ── Expertise ── */
+  #v2-expertise .container > div:last-child { grid-template-columns: 1fr !important; gap: 0 !important; }
+  #v2-expertise .container > div:first-child { position: static !important; }
+
+  /* ── Cases ── */
+  #v2-cases .container > div:last-child { grid-template-columns: 1fr !important; }
+
+  /* ── Workflow ── */
+  /* Workflow cards 2x2 → 1col */
+  #v2-workflow .container > div:last-child > div:first-child { grid-template-columns: 1fr !important; }
+  /* MQM cats 3col → 2col */
+  #v2-workflow .container > div:last-child > div > div:first-child { grid-template-columns: 1fr 1fr !important; }
+  /* AI Delegation 2col → 1col, Decision 3col → 1col */
+  #v2-workflow .container > div:last-child > div > div { grid-template-columns: 1fr !important; }
+
+  /* ── Contact ── */
+  #v2-contact .container { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+}
 </style>
 <meta name="description" content="Japanese UI Localization Specialist (EN↔JA) based in Kobe. Specializing in SaaS UI/UX localization, marketing transcreation, LQA, and AI-MT quality evaluation. Proven results: +51% signup CVR uplift, Amazon Japan ML project. Available for freelance and side projects.">
 <meta property="og:type" content="website">
