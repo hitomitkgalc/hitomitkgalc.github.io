@@ -348,7 +348,7 @@ function Expertise2({ lang }) {
     <section id="v2-expertise" style={{ padding: '100px 0', background: 'var(--white)', backgroundColor: "rgb(247, 242, 234)" }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '80px', alignItems: 'start' }}>
-          <div style={{ position: 'sticky', top: '120px' }}>
+          <div style={{ position: 'static' }}>
             <div className="label">{lang === 'ja' ? '専門領域' : 'Expertise'}</div>
             <h2 style={{ fontSize: 'clamp(26px,2.8vw,36px)', color: 'var(--blue)', lineHeight: 1.2 }}>
               {lang === 'ja' ? '3つの\n専門領域' : 'Three Core\nCapabilities'}
@@ -412,7 +412,7 @@ function Cases2({ lang }) {
     '150%高速化・5%増収：Amazon Japan MLモデルのローカライズ' :
     '150% faster, 5% more revenue: Amazon Japan ML model localization',
     stats: [
-    { value: '+150%', label: lang === 'ja' ? 'Velocity\nデータ納品速度' : 'Velocity' },
+    { value: '+150%', label: lang === 'ja' ? 'Velocity\nデータ納品速度' : 'Velocity\nData delivery' },
     { value: '+5%', label: lang === 'ja' ? '収益向上\n（消耗品）' : 'Revenue uplift\n(consumables)' },
     { value: '15%', label: lang === 'ja' ? 'エラー率\n(EU比30〜40%)' : 'Error rate\n(vs 30–40% EU)' }],
 
