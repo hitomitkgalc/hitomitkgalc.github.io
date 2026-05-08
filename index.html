@@ -37,11 +37,18 @@
   #v2-about { flex-direction: column !important; min-height: unset !important; padding-top: 80px !important; }
   #v2-about > div:first-child {
     width: 100% !important;
-    height: 240px !important;
+    height: 280px !important;
     min-height: unset !important;
-    max-height: 240px !important;
+    max-height: 280px !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
+    overflow: hidden !important;
+  }
+  /* 名前オーバーレイのネガティブマージンをリセット */
+  #v2-about > div:first-child > div:last-child {
+    margin: 0 !important;
+    padding: 12px 20px 16px !important;
+    width: 100% !important;
   }
   #v2-about > div:last-child { padding: 40px 20px 60px !important; }
   #v2-about h1 { font-size: clamp(32px, 8vw, 52px) !important; }
