@@ -141,6 +141,8 @@
 <div id="root2">
 
 <script type="text/babel" data-filename="inline-0">
+const { useState, useEffect } = React;
+
 
 
 
@@ -273,8 +275,6 @@ const STRINGS = {
 };
 
 const t = (key, lang) => STRINGS[key]?.[lang] ?? key;
-
-const { useState, useEffect } = React;
 
 /* ── thin wf lines for section bg ─────────────────────────────── */
 function GridLines({ color = '#1e3a8a', opacity = 0.04 }) {
