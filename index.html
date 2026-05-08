@@ -150,6 +150,130 @@
 
 
 
+const STRINGS = {
+  "nav.link.about": { en: "About", ja: "About" },
+  "nav.link.expertise": { en: "Expertise", ja: "Expertise" },
+  "nav.link.cases": { en: "Cases", ja: "Cases" },
+  "nav.link.methodology": { en: "Methodology", ja: "Methodology" },
+  "nav.link.contact": { en: "Contact", ja: "Contact" },
+  "nav.cta": { en: "Let's Talk", ja: "ご相談する" },
+  "hero.body": { en: "UI Localization Specialist at HubSpot Japan with a sales and CS background. I turn cultural and market insight into measurable product outcomes — from +51% CVR uplift to 5% revenue growth.", ja: "HubSpot Japanで営業・CSの経験を持つUIローカリゼーションスペシャリストとして、文化と市場の知見をビジネス成果に変換。CVR+51%・収益5%成長など実績を積み上げながら、言語×UX×ビジネスを統合した日本市場への橋をかけます。" },
+  "hero.cta": { en: "View Case Studies →", ja: "実績を見る →" },
+  "expertise.heading": { en: "Expertise", ja: "Expertise" },
+  "expertise.heading.full": { en: "Three Core\nCapabilities", ja: "3つの専門領域" },
+  "expertise.card.saas.title": { en: "SaaS UI/UX Localization", ja: "SaaS UI/UXローカリゼーション" },
+  "expertise.card.saas.body": { en: "UI string translation, terminology management, in-app QA testing. Product-quality Japanese localization that accounts for character limits, context, and user flows.", ja: "UI文字列翻訳、用語管理、アプリ内QAテストまで、文字数・コンテキスト・ユーザーフローを踏まえた、製品品質に直結する日本語ローカリゼーション。" },
+  "expertise.card.transcreation.title": { en: "Marketing Transcreation", ja: "マーケティング翻訳・トランスクリエーション" },
+  "expertise.card.transcreation.body": { en: "Adapting brand voice and marketing copy for Japanese audiences — with cultural depth and search visibility in mind. From tagline transcreation to SEO/AEO-optimized meta content, grounded in Japanese search behavior and user psychology.", ja: "日本語ユーザーに響くブランドボイスとマーケティングコピーを、文化的深度と検索の可視性を意識して適応。タグラインのトランスクリエーションから、SEO/AEO最適化されたメタコンテンツまで、日本人の検索行動とユーザー心理に根ざした翻訳を提供。" },
+  "expertise.card.lqa.title": { en: "AI-Powered Localization Workflow", ja: "AI活用ローカリゼーションワークフロー" },
+  "expertise.card.lqa.body": { en: "Building scalable localization workflows powered by LLM prompts and QA automation. From Style Guide-trained MT output to structured error categorization — reducing post-edit effort without sacrificing nuance.", ja: "LLMプロンプトとQA自動化を活用した効率的なローカライゼーションワークフローを構築。スタイルガイドで学習された機械翻訳アウトプットから構造化されたエラー分類まで、ニュアンスを損なうことなく人手による修正負荷を軽減。" },
+  "cases.heading": { en: "Localization that moved the needle", ja: "数字で示す貢献" },
+  "cases.nav.label": { en: "Case studies", ja: "Case studies" },
+  "cases.detail.expand": { en: "Detail ↓", ja: "詳細 ↓" },
+  "cases.detail.collapse": { en: "Collapse ↑", ja: "閉じる ↑" },
+  "cases.metric.cvr_free": { en: "Free→Starter\nconversion", ja: "無料→有償プラン\n転換率" },
+  "cases.metric.cvr_signup": { en: "Signup CVR", ja: "サインアップCVR" },
+  "cases.metric.revenue": { en: "Revenue uplift\n(consumables)", ja: "収益向上\n（消耗品カテゴリ）" },
+  "cases.metric.error_rate": { en: "Error rate\n(vs 30–40% EU)", ja: "エラー率\n（EU比30–40%）" },
+  "cases.insight.sales": { en: "Sales × CS insight", ja: "Sales × CS insight" },
+  "cases.insight.cultural": { en: "Cultural insight", ja: "Cultural insight" },
+  "cases.hubspot.company": { en: "HubSpot Japan", ja: "HubSpot Japan" },
+  "cases.hubspot.period": { en: "Aug 2024 – Present", ja: "Aug 2024 – Present" },
+  "cases.hubspot.tag": { en: "Localization × UX Research", ja: "Localization × UX Research" },
+  "cases.hubspot.title": { en: "SignUp CVR uplift: +51% via localization-driven A/B test", ja: "SignUp CVR +51%改善：ローカリゼーション主導のA/Bテスト" },
+  "cases.hubspot.detail": { en: "Analyzed Japan signup CVR gap — JA 16% vs EN 25% — from a localization lens. Proposed optional-field callouts and pre-form overlay. North Star metric improved 51% (statistically significant). Also flagged downstream lead qualification risk — a structural trade-off only visible through combined localization + sales expertise.", ja: "日本語ユーザーのサインアップCVR（16%）が英語（25%）を大幅に下回る問題をローカリゼーション観点から分析。電話番号・URL入力の「任意」表示改善と「入力目的を説明」オーバーレイ等を提案。North Star指標（Free→有償プラン転換）を51%改善（有意）。さらに、任意化による営業データ欠落リスクの副作用の可能性を指摘。ローカリゼーションと営業・CSの両知見を持つからこそ見えた構造的トレードオフとして、コンテンツデザインチームに進言。" },
+  "cases.amazon.company": { en: "Amazon Japan", ja: "Amazon Japan" },
+  "cases.amazon.period": { en: "Feb 2021 – May 2023", ja: "Feb 2021 – May 2023" },
+  "cases.amazon.tag": { en: "Localization × ML Training Data", ja: "Localization × ML Training Data" },
+  "cases.amazon.title": { en: "150% faster, 5% more revenue: Amazon Japan ML model localization", ja: "150%処理速度改善・5%売上増：Amazon Japan カタログ機械学習モデルのローカライズ" },
+  "cases.amazon.detail": { en: "ATRIA project: localized AI catalog classification for Japan. Audited English substitutability logic across all categories. Fed Japan-specific standards to EU data scientists. Achieved 15% error rate vs 30–40% in EU. Awarded Most Valuable Contribution Q3 2022.", ja: "ATRIAプロジェクト：AIカタログ分類機械学習モデルを日本市場向けにローカライズ。英語前提の「代替性ベース分類」が日本食品・生活文化に適用できない事例を全カテゴリで検証し、EUデータサイエンティストに日本固有の分類基準をフィードバックし、機械学習のデータ分類品質を向上。EU市場30–40%のエラー率を大幅に下回る15%までの削減を達成。Q3 2022 Amazon ADS Most Valuable Contribution受賞。" },
+  "methodology.label": { en: "Methodology", ja: "Methodology" },
+  "methodology.heading": { en: "AI × Human Localization\nQuality Framework", ja: "AI × Human ローカリゼーション\n品質フレームワーク" },
+  "methodology.sub": { en: "My strength lies not just in translation, but in designing and ensuring quality. I help teams select the right workflow and build QA standards tailored to their project conditions.", ja: "単なる翻訳だけでなく、品質をどう設計・担保するかが私の強みです。プロジェクト条件に応じたワークフロー設計とQA基準の整備を支援します。" },
+  "methodology.tab.ai_workflow.label": { en: "AI Workflow 4 Patterns", ja: "AI Workflow 4パターン例" },
+  "methodology.tab.mqm_dqf.label": { en: "MQM-DQF Quality Framework", ja: "MQM-DQF品質フレームワーク" },
+  "methodology.tab.ai_delegation.label": { en: "AI Delegation", ja: "AIへのタスク委任" },
+  "methodology.process.mt": { en: "Machine Translation", ja: "機械翻訳" },
+  "methodology.process.ai_review": { en: "AI Review", ja: "AI Review" },
+  "methodology.process.post_edit": { en: "Human Post Edit", ja: "人による校正" },
+  "methodology.process.human_trans": { en: "Human Translation", ja: "人による翻訳" },
+  "methodology.tab.ai_workflow.pattern.1.title": { en: "CAT + MT + AIR + PE — Balanced", ja: "CAT + MT + AIR + PE — バランス型" },
+  "methodology.tab.ai_workflow.pattern.1.tag": { en: "Balanced", ja: "バランス重視" },
+  "methodology.tab.ai_workflow.pattern.1.desc": { en: "High-TM-match segments handled by CAT; the rest flows to MT+AI Review. Maximizes TM assets while balancing cost, quality, and speed.", ja: "TMのマッチ率が高いセグメントはCATで処理し、残りを機械翻訳+AIレビューに流す。TM資産を最大活用しながらコスト・品質・スピードをバランスよく確保。" },
+  "methodology.tab.ai_workflow.pattern.1.case.1": { en: "Strong translation memory (TM) exists", ja: "翻訳メモリ（TM）が充実している" },
+  "methodology.tab.ai_workflow.pattern.1.case.2": { en: "Ongoing or repetitive content", ja: "継続的なプロジェクト・反復コンテンツ" },
+  "methodology.tab.ai_workflow.pattern.1.case.3": { en: "Need balance of cost, quality, and speed", ja: "コスト・品質・スピードをバランスよく求める" },
+  "methodology.tab.ai_workflow.pattern.2.title": { en: "MT + AIR + PE — Speed-First", ja: "MT + AIR + PE — 速度優先型" },
+  "methodology.tab.ai_workflow.pattern.2.tag": { en: "Speed", ja: "スピード重視" },
+  "methodology.tab.ai_workflow.pattern.2.desc": { en: "Faster without TM. MT+LC pre-scans for errors; humans focus only on flagged segments, minimizing PE effort.", ja: "TM省略により高速化。機械翻訳+AIレビューでエラーを事前スキャンし、人間はフラグ箇所のみ集中。人手による校正の工数を最小化する。" },
+  "methodology.tab.ai_workflow.pattern.2.case.1": { en: "Low TM / new project", ja: "TMが少ない・新規プロジェクト" },
+  "methodology.tab.ai_workflow.pattern.2.case.2": { en: "Tight deadlines or high volume", ja: "短納期・大量コンテンツ" },
+  "methodology.tab.ai_workflow.pattern.2.case.3": { en: "Marketing content, blog articles", ja: "マーケティングコンテンツ・ブログ記事" },
+  "methodology.tab.ai_workflow.pattern.3.title": { en: "MT + PE + AIR — Safety Net", ja: "MT + PE + AIR — 安全網型" },
+  "methodology.tab.ai_workflow.pattern.3.tag": { en: "Quality Assurance", ja: "品質保証" },
+  "methodology.tab.ai_workflow.pattern.3.desc": { en: "LC acts as a final safety net after human PE, catching fatigue-related errors that humans miss.", ja: "機械翻訳→人による校正の後にAIが「最終の目」として機能。疲労・見落としによるエラーをAIが検知し、品質を担保する。" },
+  "methodology.tab.ai_workflow.pattern.3.case.1": { en: "Human-led but want AI final check", ja: "人間が主だが最終確認をAIに任せたい" },
+  "methodology.tab.ai_workflow.pattern.3.case.2": { en: "Long or repetitive projects prone to fatigue", ja: "長期・反復作業で疲労が蓄積しやすい案件" },
+  "methodology.tab.ai_workflow.pattern.3.case.3": { en: "UI strings, product documentation", ja: "UI文字列・製品ドキュメント" },
+  "methodology.tab.ai_workflow.pattern.4.title": { en: "T + AIR — Quality-First", ja: "T + AIR — 品質最重視型" },
+  "methodology.tab.ai_workflow.pattern.4.tag": { en: "Highest Quality", ja: "最高品質" },
+  "methodology.tab.ai_workflow.pattern.4.desc": { en: "Human translation as the base, with LC confirming consistency, terminology, and locale rules. For content where MT influence is unacceptable.", ja: "機械翻訳を使わず、人による一次翻訳を基本とし、LCが一貫性・用語・形式エラーを最終確認。機械翻訳バイアスの影響を避けたいコンテンツに。" },
+  "methodology.tab.ai_workflow.pattern.4.case.1": { en: "Medical, legal, or financial content requiring high accuracy", ja: "医療・法律・金融など高精度な翻訳が必要" },
+  "methodology.tab.ai_workflow.pattern.4.case.2": { en: "Brand-voice-critical content", ja: "ブランドボイスが重要なコンテンツ" },
+  "methodology.tab.ai_workflow.pattern.4.case.3": { en: "Language pairs where MT quality is unreliable", ja: "機械翻訳の品質が信頼できない言語ペア" },
+  "methodology.tab.mqm_dqf.col.features": { en: "How it works", ja: "特徴" },
+  "methodology.tab.mqm_dqf.col.best_for": { en: "Best for", ja: "向いているケース" },
+  "methodology.tab.mqm_dqf.col.severity": { en: "Severity Levels", ja: "重大性レベル" },
+  "methodology.tab.mqm_dqf.dimension.accuracy.title": { en: "Accuracy", ja: "Accuracy" },
+  "methodology.tab.mqm_dqf.dimension.accuracy.desc": { en: "Mistranslation or omission. Whether source intent is accurately conveyed.", ja: "誤訳・欠落。原文の意図が正確に伝わっているか。" },
+  "methodology.tab.mqm_dqf.dimension.terminology.title": { en: "Terminology", ja: "Terminology" },
+  "methodology.tab.mqm_dqf.dimension.terminology.desc": { en: "Inconsistent terms. Alignment with product glossary and style guide.", ja: "用語の不一致。製品用語集・スタイルガイドとの整合性" },
+  "methodology.tab.mqm_dqf.dimension.fluency.title": { en: "Fluency", ja: "Fluency" },
+  "methodology.tab.mqm_dqf.dimension.fluency.desc": { en: "Readability and naturalness in the target language.", ja: "読みやすさ・自然さ。ターゲット言語としての流暢性" },
+  "methodology.tab.mqm_dqf.dimension.style.title": { en: "Style", ja: "Style" },
+  "methodology.tab.mqm_dqf.dimension.style.desc": { en: "Tone and voice. Alignment with brand guidelines.", ja: "文体・トーン。ブランドボイス・トーンとの一致" },
+  "methodology.tab.mqm_dqf.dimension.design.title": { en: "Design", ja: "Design" },
+  "methodology.tab.mqm_dqf.dimension.design.desc": { en: "Layout issues. Impact of string length on UI elements.", ja: "レイアウト崩れ。文字列の長さ・改行・UI要素への影響" },
+  "methodology.tab.mqm_dqf.dimension.locale.title": { en: "Locale conv.", ja: "Locale conv." },
+  "methodology.tab.mqm_dqf.dimension.locale.desc": { en: "Date, currency, units — locale-specific formatting conventions.", ja: "日付・通貨・単位など、国・地域固有の表記規則" },
+  "methodology.tab.mqm_dqf.severity.neutral": { en: "Neutral — No impact", ja: "Neutral — 影響なし・好みの問題" },
+  "methodology.tab.mqm_dqf.severity.minor": { en: "Minor — Low UX impact", ja: "Minor — UX影響小" },
+  "methodology.tab.mqm_dqf.severity.major": { en: "Major — Comprehension risk", ja: "Major — 誤解リスク・機能影響あり" },
+  "methodology.tab.mqm_dqf.severity.critical": { en: "Critical — Brand / legal risk", ja: "Critical — ブランド損傷・法的リスク" },
+  "methodology.tab.mqm_dqf.example.title": { en: "Example: Fuzzy Match Bug — RCA Process", ja: "実例：Fuzzy matchバグの分析プロセス" },
+  "methodology.tab.mqm_dqf.example.identify": { en: "\"surveys\" mistranslated repeatedly — recurring error = structural issue", ja: "「surveys（アンケート）」が毎回正しく訳されない — 繰り返しエラー = 構造的問題" },
+  "methodology.tab.mqm_dqf.example.investigate": { en: "TB has \"survey = questionnaire\" but Fuzzy match is OFF — plural forms not matching — Tools issue", ja: "Term Baseに「survey = アンケート」はあるが、Fuzzy match機能がOFFのため複数形でヒットしない — ツールの問題" },
+  "methodology.tab.mqm_dqf.example.fix": { en: "Enabled Fuzzy match; configured TB to catch survey / surveys / surveying", ja: "Fuzzy matchをONにし、survey / surveys / surveying すべて用語データベースでヒットするよう設定変更" },
+  "methodology.tab.mqm_dqf.example.monitor": { en: "Track next project to confirm the error does not recur", ja: "次プロジェクトで同エラーが出ないかトラッキング" },
+  "methodology.tab.ai_delegation.col.how_to_decide": { en: "How to Decide", ja: "判断のポイント" },
+  "methodology.tab.ai_delegation.ai.heading": { en: "Delegate to AI", ja: "AIに任せること" },
+  "methodology.tab.ai_delegation.ai.subheading": { en: "Speed · Coverage · Consistency", ja: "処理速度・網羅性・一貫性" },
+  "methodology.tab.ai_delegation.ai.item.1": { en: "Scan all segments without fatigue", ja: "全セグメントをスキャンして見落としを防ぐ" },
+  "methodology.tab.ai_delegation.ai.item.2": { en: "Detect terminology, consistency, and locale issues", ja: "用語・一貫性・形式エラーの抽出" },
+  "methodology.tab.ai_delegation.ai.item.3": { en: "Prioritize errors by severity", ja: "エラー箇所の優先順位付け（重大性の分類）" },
+  "methodology.tab.ai_delegation.ai.item.4": { en: "High-speed MT output for large volumes", ja: "大量コンテンツの機械翻訳での高速出力" },
+  "methodology.tab.ai_delegation.human.heading": { en: "Keep with Humans", ja: "人間が担うこと" },
+  "methodology.tab.ai_delegation.human.subheading": { en: "Judgment · Context · Brand", ja: "判断・文脈・ブランド定義" },
+  "methodology.tab.ai_delegation.human.item.1": { en: "Judging nuance and brand voice", ja: "ニュアンス・ブランドボイスの適否" },
+  "methodology.tab.ai_delegation.human.item.2": { en: "Cultural appropriateness and context", ja: "文化的適切さ・文脈の解釈" },
+  "methodology.tab.ai_delegation.human.item.3": { en: "Final review and correction of AI flags", ja: "AIフラグの最終確認と修正" },
+  "methodology.tab.ai_delegation.human.item.4": { en: "Style guide and glossary decisions", ja: "スタイルガイド・用語集の意思決定" },
+  "methodology.tab.ai_delegation.decision.cond.1": { en: "Strong TM exists", ja: "TMの充実度が高い" },
+  "methodology.tab.ai_delegation.decision.pill.1": { en: "→ More AI", ja: "→ AI委譲↑" },
+  "methodology.tab.ai_delegation.decision.cond.2": { en: "High quality standards", ja: "品質基準が厳しい" },
+  "methodology.tab.ai_delegation.decision.pill.2": { en: "→ More Human", ja: "→ Human比率↑" },
+  "methodology.tab.ai_delegation.decision.cond.3": { en: "Speed or cost priority", ja: "納期・コスト優先" },
+  "methodology.tab.ai_delegation.decision.pill.3": { en: "→ More AI", ja: "→ AI委譲↑" },
+  "methodology.tab.ai_delegation.decision.rec.1": { en: "Pattern 1 or 2", ja: "パターン1 or 2" },
+  "methodology.tab.ai_delegation.decision.rec.2": { en: "Pattern 3 or 4", ja: "パターン3 or 4" },
+  "methodology.tab.ai_delegation.decision.rec.3": { en: "Pattern 2 recommended", ja: "パターン2が最適" },
+  "contact.heading": { en: "Let's Build\nSomething Together", ja: "お気軽に\nご相談ください" },
+  "contact.cta": { en: "Contact Form →", ja: "お問い合わせフォーム →" },
+  "contact.footnote": { en: "Available for remote freelance · Kobe", ja: "副業・フリーランス条件受付中 · Kobe" },
+};
+
+const t = (key, lang) => STRINGS[key]?.[lang] ?? key;
+
 const { useState, useEffect } = React;
 
 /* ── thin wf lines for section bg ─────────────────────────────── */
@@ -170,9 +294,7 @@ function GridLines({ color = '#1e3a8a', opacity = 0.04 }) {
 function Nav2({ lang }) {
   const [sc, setSc] = useState(false);
   useEffect(() => {const h = () => setSc(window.scrollY > 60);window.addEventListener('scroll', h);return () => window.removeEventListener('scroll', h);}, []);
-  const links = lang === 'ja' ?
-  [['about', 'About'], ['expertise', '専門'], ['cases', '実績'], ['methodology', 'メソドロジー'], ['contact', 'Contact']] :
-  [['about', 'About'], ['expertise', 'Expertise'], ['cases', 'Cases'], ['methodology', 'Methodology'], ['contact', 'Contact']];
+  const links = [['about', t('nav.link.about',lang)], ['expertise', t('nav.link.expertise',lang)], ['cases', t('nav.link.cases',lang)], ['methodology', t('nav.link.methodology',lang)], ['contact', t('nav.link.contact',lang)]];
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, background: sc ? 'rgba(250,252,255,0.96)' : 'transparent', backdropFilter: sc ? 'blur(16px)' : 'none', borderBottom: sc ? '1px solid var(--border)' : 'none', transition: 'all .3s', padding: '18px 0' }}>
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -186,7 +308,7 @@ function Nav2({ lang }) {
           onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = .65}>{l}</a>
           )}
           <a href="#v2-contact" style={{ background: 'var(--peach)', color: '#fff', padding: '9px 22px', borderRadius: '999px', fontSize: '13px', fontWeight: 600, backgroundColor: "rgb(201, 168, 124)" }}>
-            {lang === 'ja' ? '相談する' : 'Let\'s Talk'}
+            {t('nav.cta', lang)}
           </a>
         </div>
       </div>
@@ -306,9 +428,7 @@ function Hero2({ lang }) {
             <>Localization as<br /><em style={{ fontStyle: 'italic', color: "rgb(201, 168, 124)" }}>Market Intelligence</em></>}
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: '17px', lineHeight: 1.8, maxWidth: '480px', marginBottom: '16px' }}>
-            {lang === 'ja' ?
-            'HubSpot JapanでUI翻訳・LQA・A/Bテスト改善を担当。言語×UX×ビジネス成果の三角形を理解し、日本市場への橋をかけます。' :
-            'UI Localization Specialist at HubSpot Japan with a sales and CS background. I turn cultural and market insight into measurable product outcomes — from +51% CVR uplift to 5% revenue growth.'}
+            {t('hero.body', lang)}
           </p>
           <blockquote style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '20px', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '40px', fontSize: '16px', fontFamily: '"Libre Baskerville"' }}>
             "Localization is market intelligence, not word substitution."
@@ -316,7 +436,7 @@ function Hero2({ lang }) {
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', marginBottom: '48px' }}>
             <a href="#v2-cases" style={{ color: '#fff', padding: '14px 28px', borderRadius: '999px', fontWeight: 600, fontSize: '14px', transition: 'all .2s', display: 'inline-block', background: "var(--blue)" }}
             onMouseEnter={(e) => {e.target.style.background = 'var(--blue-mid)';}} onMouseLeave={(e) => {e.target.style.background = 'var(--blue)';}}>
-              {lang === 'ja' ? '実績を見る →' : 'View Case Studies →'}
+              {t('hero.cta', lang)}
             </a>
             <a href="https://www.linkedin.com/in/hitomi-takagi-69434a173/" target="_blank" style={{ color: 'var(--blue)', fontSize: '14px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', opacity: .75, transition: 'opacity .2s' }}
             onMouseEnter={(e) => e.currentTarget.style.opacity = 1} onMouseLeave={(e) => e.currentTarget.style.opacity = .75}>
@@ -340,24 +460,25 @@ function Hero2({ lang }) {
 /* ── Expertise V2 ─────────────────────────────────────────────── */
 function Expertise2({ lang }) {
   const areas = [
-  { n: '01', title: lang === 'ja' ? 'SaaS UI/UX ローカリゼーション' : 'SaaS UI/UX Localization', desc: lang === 'ja' ? 'UIストリング翻訳、用語管理、インアプリQAテスト、TMSワークフロー構築まで。文字数・コンテキスト・ユーザーフローを踏まえた製品品質直結の日本語化。' : 'UI string translation, terminology management, in-app QA testing. Product-quality Japanese localization that accounts for character limits, context, and user flows.' },
-  { n: '02', title: lang === 'ja' ? 'マーケティング翻訳・トランスクリエーション' : 'Marketing Transcreation', desc: lang === 'ja' ? '英語のブランドボイス・感情的インパクトを日本語で再現。文化的含意・言語構造・ターゲット心理まで踏み込んだ、響く翻訳。' : 'Adapting brand voice and marketing copy for Japanese audiences — with cultural depth and search visibility in mind. From tagline transcreation to SEO/AEO-optimized meta content, grounded in Japanese search behavior and user psychology.' },
-  { n: '03', title: lang === 'ja' ? 'LQA・AI翻訳品質評価' : 'AI-Powered Localization Workflow', desc: lang === 'ja' ? 'DeepL、GPT、Claudeなど主要AI翻訳ツールの品質評価。13言語以上のベンダーQAサポート・エラー分類・一貫性監査。' : 'Quality evaluation of AI-MT tools (DeepL, GPT, Claude). Vendor QA support across 13+ languages with error categorization and consistency audits.' }];
+  { n: '01', title: t('expertise.card.saas.title', lang), desc: t('expertise.card.saas.body', lang) },
+  { n: '02', title: t('expertise.card.transcreation.title', lang), desc: t('expertise.card.transcreation.body', lang) },
+  { n: '03', title: t('expertise.card.lqa.title', lang), desc: t('expertise.card.lqa.body', lang) }];
 
   return (
     <section id="v2-expertise" style={{ padding: '100px 0', background: 'var(--white)', backgroundColor: "rgb(247, 242, 234)" }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '80px', alignItems: 'start' }}>
           <div style={{ position: 'static' }}>
-            <div className="label">{lang === 'ja' ? '専門領域' : 'Expertise'}</div>
+            <div className="label">{t('expertise.heading', lang)}</div>
             <h2 style={{ fontSize: 'clamp(26px,2.8vw,36px)', color: 'var(--blue)', lineHeight: 1.2 }}>
-              {lang === 'ja' ? '3つの\n専門領域' : 'Three Core\nCapabilities'}
+              {t('expertise.heading.full', lang)}
             </h2>
             <p style={{ color: 'var(--muted)', fontSize: '14px', lineHeight: 1.7, marginTop: '16px' }}>
               {lang === 'ja' ?
               'ツールと言語だけでなく、日本市場の文脈理解と製品改善へのフィードバックが私の強みです。' :
               "Not just tools and language — cultural market understanding and product feedback loops are my differentiators."}
             </p>
+          </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {areas.map((a, i) =>
@@ -388,51 +509,40 @@ function ExCard2({ a, last }) {
 /* ── Cases V2 ─────────────────────────────────────────────────── */
 function Cases2({ lang }) {
   const cases = [
+function Cases2({ lang }) {
+  const cases = [
   {
-    company: 'HubSpot Japan',
-    period: 'Aug 2024 – Present',
-    tag: 'Localization × UX Research',
-    title: lang === 'ja' ?
-    'SignUp CVR +51%改善：ローカリゼーション主導のA/Bテスト' :
-    'SignUp CVR uplift: +51% via localization-driven A/B test',
+    company: t('cases.hubspot.company', lang),
+    period: t('cases.hubspot.period', lang),
+    tag: t('cases.hubspot.tag', lang),
+    title: t('cases.hubspot.title', lang),
     stats: [
-    { value: '+51%', label: lang === 'ja' ? 'Free→Starter\n転換率' : 'Free→Starter\nconversion' },
-    { value: '16%→19%', label: lang === 'ja' ? 'サインアップCVR' : 'Signup CVR' }],
-
-    insight: lang === 'ja' ? 'Sales × CS insight' : 'Sales × CS insight',
-    detail: lang === 'ja' ?
-    '日本語ユーザーのサインアップCVR（16.6%）が英語（24.9%）を大幅に下回る問題をローカリゼーション観点から分析。電話番号・URL入力の「任意」表示改善と、入力目的を説明するオーバーレイを提案。North Star指標（Free→Starter転換）が51%改善（有意）。さらに「任意化による営業データ欠損リスク」を指摘し、構造的トレードオフをクライアントに提言。' :
-    'Analyzed Japan signup CVR gap from a localization lens. Proposed optional-field callouts and pre-form overlay. North Star metric improved 51% (statistically significant). Also flagged downstream lead qualification risk — a structural trade-off only visible through combined localization + sales expertise.'
+    { value: '+51%', label: t('cases.metric.cvr_free', lang) },
+    { value: '16%→19%', label: t('cases.metric.cvr_signup', lang) }],
+    insight: t('cases.insight.sales', lang),
+    detail: t('cases.hubspot.detail', lang)
   },
   {
-    company: 'Amazon Japan',
-    period: 'Feb 2021 – May 2023',
-    tag: 'Localization × ML Training Data',
-    title: lang === 'ja' ?
-    '150%高速化・5%増収：Amazon Japan MLモデルのローカライズ' :
-    '150% faster, 5% more revenue: Amazon Japan ML model localization',
+    company: t('cases.amazon.company', lang),
+    period: t('cases.amazon.period', lang),
+    tag: t('cases.amazon.tag', lang),
+    title: t('cases.amazon.title', lang),
     stats: [
     { value: '+150%', label: lang === 'ja' ? 'Velocity\nデータ納品速度' : 'Velocity\nData delivery' },
-    { value: '+5%', label: lang === 'ja' ? '収益向上\n（消耗品）' : 'Revenue uplift\n(consumables)' },
-    { value: '15%', label: lang === 'ja' ? 'エラー率\n(EU比30〜40%)' : 'Error rate\n(vs 30–40% EU)' }],
-
-    insight: lang === 'ja' ? 'Cultural insight' : 'Cultural insight',
-    detail: lang === 'ja' ?
-    'ATRIAプロジェクト：AIカタログ分類を日本市場向けにローカライズ。英語圏の「代替性ベース分類」が日本食文化に合わない事例（うどん≠そうめん）を全カテゴリで検証。EUデータサイエンティストに日本固有の分類基準をフィードバックし、MLデータ品質を向上。EU市場30〜40%を大幅に下回る15%を達成。Q3 2022 Most Valuable Contribution受賞。' :
-    'ATRIA project: localized AI catalog classification for Japan. Audited English substitutability logic across all categories (e.g., udon ≠ sōmen). Fed Japan-specific standards to EU data scientists. Achieved 15% error rate vs 30–40% in EU. Awarded Most Valuable Contribution Q3 2022.'
+    { value: '+5%', label: t('cases.metric.revenue', lang) },
+    { value: '15%', label: t('cases.metric.error_rate', lang) }],
+    insight: t('cases.insight.cultural', lang),
+    detail: t('cases.amazon.detail', lang)
   }];
-
-
-  const [open, setOpen] = useState(null);
 
   return (
     <section id="v2-cases" style={{ padding: '100px 0', background: 'var(--blue-light)', position: 'relative', overflow: 'hidden', backgroundColor: "rgb(234, 221, 230)" }}>
       <GridLines opacity={0.05} />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ marginBottom: '48px' }}>
-          <div className="label">{lang === 'ja' ? 'ケーススタディ' : 'Case studies'}</div>
+          <div className="label">{t('cases.nav.label', lang)}</div>
           <h2 style={{ fontSize: 'clamp(28px,3vw,42px)', color: 'var(--blue)' }}>
-            {lang === 'ja' ? '数字で示せる貢献' : 'Localization that moved the needle'}
+            {t('cases.heading', lang)}
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
@@ -467,7 +577,7 @@ function Cases2({ lang }) {
                 </div>
                 <button onClick={() => setOpen(open === i ? null : i)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', color: 'var(--blue)', fontWeight: 600, padding: 0 }}>
-                  {open === i ? lang === 'ja' ? '閉じる ↑' : 'Collapse ↑' : lang === 'ja' ? '詳細 ↓' : 'Detail ↓'}
+                  {open === i ? open === i ? t('cases.detail.collapse', lang) : t('cases.detail.expand', lang)}
                 </button>
               </div>
               {open === i &&
@@ -489,102 +599,79 @@ function Workflow2({ lang }) {
   const [activeCard, setActiveCard] = React.useState(0);
 
   const copy = {
-    label:   lang === 'ja' ? 'Methodology'               : 'Methodology',
-    heading: lang === 'ja' ? 'AI × Human ローカリゼーション\n品質フレームワーク'
-                           : 'AI × Human Localization\nQuality Framework',
-    sub:     lang === 'ja'
-      ? '翻訳するだけでなく、品質をどう設計・担保するかが私の強みです。プロジェクト条件に応じたワークフロー設計とQA基準の整備を支援します。'
-      : 'My strength lies not just in translation, but in designing and ensuring quality. I help teams select the right workflow and build QA standards tailored to their project conditions.',
-    tab1:    lang === 'ja' ? 'AI Workflow 4パターン'      : 'AI Workflow 4 Patterns',
-    tab2:    lang === 'ja' ? 'MQM-DQF 品質フレームワーク' : 'MQM-DQF Quality Framework',
-    tab3:    lang === 'ja' ? 'AI Delegation'            : 'AI Delegation',
+    label:   t('methodology.label', lang),
+    heading: t('methodology.heading', lang),
+    sub:     t('methodology.sub', lang),
+    tab1:    t('methodology.tab.ai_workflow.label', lang),
+    tab2:    t('methodology.tab.mqm_dqf.label', lang),
+    tab3:    t('methodology.tab.ai_delegation.label', lang),
   };
+
+  const patterns = [
 
   const patterns = [
     {
       num: '1',
-      title: lang === 'ja' ? 'CAT + MT + AIR + PE — 標準型'   : 'CAT + MT + AIR + PE — Balanced',
-      tag:   lang === 'ja' ? 'バランス重視'                   : 'Balanced',
-      steps: ['CAT', lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? 'AI Review' : 'AI Review', lang === 'ja' ? '人による校正' : 'Human Post Edit'],
+      title: t('methodology.tab.ai_workflow.pattern.1.title', lang),
+      tag:   t('methodology.tab.ai_workflow.pattern.1.tag', lang),
+      steps: ['CAT', t('methodology.process.mt', lang), t('methodology.process.ai_review', lang), t('methodology.process.post_edit', lang)],
       stepTypes: ['cat', 'mt', 'lc', 'pe'],
-      desc:  lang === 'ja'
-        ? 'TMのマッチ率が高いセグメントはCATで処理し、残りをMT+LCに流す。TM資産を最大活用しながらコスト・品質・スピードをバランスよく確保。'
-        : 'High-TM-match segments handled by CAT; the rest flows to MT+LC. Maximizes TM assets while balancing cost, quality, and speed.',
-      cases: lang === 'ja'
-        ? ['翻訳メモリ（TM）が充実している', '継続的なプロジェクト・反復コンテンツ', 'コスト・品質・スピードをバランスよく求める']
-        : ['Strong translation memory (TM) exists', 'Ongoing or repetitive content', 'Need balance of cost, quality, and speed'],
+      desc:  t('methodology.tab.ai_workflow.pattern.1.desc', lang),
+      cases: [t('methodology.tab.ai_workflow.pattern.1.case.1', lang), t('methodology.tab.ai_workflow.pattern.1.case.2', lang), t('methodology.tab.ai_workflow.pattern.1.case.3', lang)],
     },
     {
       num: '2',
-      title: lang === 'ja' ? 'MT + AIR + PE — 速度優先型'      : 'MT + AIR + PE — Speed-First',
-      tag:   lang === 'ja' ? 'スピード重視'                   : 'Speed',
-      steps: [lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? 'AI Review' : 'AI Review', lang === 'ja' ? '人による校正' : 'Human Post Edit'],
+      title: t('methodology.tab.ai_workflow.pattern.2.title', lang),
+      tag:   t('methodology.tab.ai_workflow.pattern.2.tag', lang),
+      steps: [t('methodology.process.mt', lang), t('methodology.process.ai_review', lang), t('methodology.process.post_edit', lang)],
       stepTypes: ['mt', 'lc', 'pe'],
-      desc:  lang === 'ja'
-        ? 'TM省略により高速化。MT+LCでエラーを事前スキャンし、人間はフラグ箇所のみ集中。PEの工数を最小化する。'
-        : 'Faster without TM. MT+LC pre-scans for errors; humans focus only on flagged segments, minimizing PE effort.',
-      cases: lang === 'ja'
-        ? ['TMが少ない・新規プロジェクト', '短納期・大量コンテンツ', 'マーケティングコンテンツ・ブログ記事']
-        : ['Low TM / new project', 'Tight deadlines or high volume', 'Marketing content, blog articles'],
+      desc:  t('methodology.tab.ai_workflow.pattern.2.desc', lang),
+      cases: [t('methodology.tab.ai_workflow.pattern.2.case.1', lang), t('methodology.tab.ai_workflow.pattern.2.case.2', lang), t('methodology.tab.ai_workflow.pattern.2.case.3', lang)],
     },
     {
       num: '3',
-      title: lang === 'ja' ? 'MT + PE + AIR — 安全網型'        : 'MT + PE + AIR — Safety Net',
-      tag:   lang === 'ja' ? '品質保証'                       : 'Quality Assurance',
-      steps: [lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? '人による校正' : 'Human Post Edit', lang === 'ja' ? 'AI Review' : 'AI Review'],
+      title: t('methodology.tab.ai_workflow.pattern.3.title', lang),
+      tag:   t('methodology.tab.ai_workflow.pattern.3.tag', lang),
+      steps: [t('methodology.process.mt', lang), t('methodology.process.post_edit', lang), t('methodology.process.ai_review', lang)],
       stepTypes: ['mt', 'pe', 'lc'],
-      desc:  lang === 'ja'
-        ? '人間PEの後にLCが「最終の目」として機能。疲労・見落としによるエラーをAIが検知し、品質を担保する。'
-        : 'LC acts as a final safety net after human PE, catching fatigue-related errors that humans miss.',
-      cases: lang === 'ja'
-        ? ['人間が主だが最終確認をAIに任せたい', '長文・反復作業で疲労が蓄積しやすい案件', 'UI文字列・製品ドキュメント']
-        : ['Human-led but want AI final check', 'Long or repetitive projects prone to fatigue', 'UI strings, product documentation'],
+      desc:  t('methodology.tab.ai_workflow.pattern.3.desc', lang),
+      cases: [t('methodology.tab.ai_workflow.pattern.3.case.1', lang), t('methodology.tab.ai_workflow.pattern.3.case.2', lang), t('methodology.tab.ai_workflow.pattern.3.case.3', lang)],
     },
     {
       num: '4',
-      title: lang === 'ja' ? 'T + AIR — 品質最重視型'          : 'T + AIR — Quality-First',
-      tag:   lang === 'ja' ? '最高品質'                       : 'Highest Quality',
-      steps: [lang === 'ja' ? '人間翻訳' : 'Human Translation', lang === 'ja' ? 'AI Review' : 'AI Review'],
+      title: t('methodology.tab.ai_workflow.pattern.4.title', lang),
+      tag:   t('methodology.tab.ai_workflow.pattern.4.tag', lang),
+      steps: [t('methodology.process.human_trans', lang), t('methodology.process.ai_review', lang)],
       stepTypes: ['t', 'lc'],
-      desc:  lang === 'ja'
-        ? 'MTを使わず人間翻訳を基本とし、LCが一貫性・用語・ロケール規則を最終確認。MTの影響を避けたいコンテンツに。'
-        : 'Human translation as the base, with LC confirming consistency, terminology, and locale rules. For content where MT influence is unacceptable.',
-      cases: lang === 'ja'
-        ? ['医療・法律・金融など高精度が必要', 'ブランドボイスが重要なコンテンツ', 'MTの品質が信頼できない言語ペア']
-        : ['Medical, legal, or financial content requiring high accuracy', 'Brand-voice-critical content', 'Language pairs where MT quality is unreliable'],
+      desc:  t('methodology.tab.ai_workflow.pattern.4.desc', lang),
+      cases: [t('methodology.tab.ai_workflow.pattern.4.case.1', lang), t('methodology.tab.ai_workflow.pattern.4.case.2', lang), t('methodology.tab.ai_workflow.pattern.4.case.3', lang)],
     },
   ];
 
   const mqmCats = [
-    { title: 'Accuracy',     desc: lang === 'ja' ? '意味の訳し・欠落。原文の意図が正確に伝わっているか'       : 'Mistranslation or omission. Whether source intent is accurately conveyed.' },
-    { title: 'Terminology',  desc: lang === 'ja' ? '用語の不一致。製品用語集・スタイルガイドとの整合性'       : 'Inconsistent terms. Alignment with product glossary and style guide.' },
-    { title: 'Fluency',      desc: lang === 'ja' ? '読みやすさ・自然さ。ターゲット言語としての流暢性'         : 'Readability and naturalness in the target language.' },
-    { title: 'Style',        desc: lang === 'ja' ? '文体・トーン。ブランドボイスやトーンオブボイスとの一致'   : 'Tone and voice. Alignment with brand guidelines.' },
-    { title: 'Design',       desc: lang === 'ja' ? 'レイアウト崩れ。文字列長・改行・UI要素への影響'           : 'Layout issues. Impact of string length on UI elements.' },
-    { title: 'Locale conv.', desc: lang === 'ja' ? '日付・通貨・単位など、ロケール固有の表記規則'             : 'Date, currency, units — locale-specific formatting conventions.' },
+    { title: t('methodology.tab.mqm_dqf.dimension.accuracy.title', lang),    desc: t('methodology.tab.mqm_dqf.dimension.accuracy.desc', lang) },
+    { title: t('methodology.tab.mqm_dqf.dimension.terminology.title', lang),  desc: t('methodology.tab.mqm_dqf.dimension.terminology.desc', lang) },
+    { title: t('methodology.tab.mqm_dqf.dimension.fluency.title', lang),      desc: t('methodology.tab.mqm_dqf.dimension.fluency.desc', lang) },
+    { title: t('methodology.tab.mqm_dqf.dimension.style.title', lang),        desc: t('methodology.tab.mqm_dqf.dimension.style.desc', lang) },
+    { title: t('methodology.tab.mqm_dqf.dimension.design.title', lang),       desc: t('methodology.tab.mqm_dqf.dimension.design.desc', lang) },
+    { title: t('methodology.tab.mqm_dqf.dimension.locale.title', lang),       desc: t('methodology.tab.mqm_dqf.dimension.locale.desc', lang) },
   ];
 
   const severities = [
-    { label: lang === 'ja' ? 'Neutral — 影響なし'         : 'Neutral — No impact',          style: { background: '#f3f4f6', color: '#6b7280' } },
-    { label: lang === 'ja' ? 'Minor — UX影響小'           : 'Minor — Low UX impact',        style: { background: '#dbeafe', color: '#1e3a8a' } },
-    { label: lang === 'ja' ? 'Major — 誤解・機能影響あり' : 'Major — Comprehension risk',    style: { background: '#fef3c7', color: '#92400e' } },
-    { label: lang === 'ja' ? 'Critical — ブランド損傷'    : 'Critical — Brand / legal risk', style: { background: '#fee2e2', color: '#991b1b' } },
+    { label: t('methodology.tab.mqm_dqf.severity.neutral', lang),   style: { background: '#f3f4f6', color: '#6b7280' } },
+    { label: t('methodology.tab.mqm_dqf.severity.minor', lang),     style: { background: '#dbeafe', color: '#1e3a8a' } },
+    { label: t('methodology.tab.mqm_dqf.severity.major', lang),     style: { background: '#fef3c7', color: '#92400e' } },
+    { label: t('methodology.tab.mqm_dqf.severity.critical', lang),  style: { background: '#fee2e2', color: '#991b1b' } },
   ];
 
-  const exampleLabel = lang === 'ja' ? '実例：Fuzzy matchバグの分析プロセス' : 'Example: Fuzzy Match Bug — RCA Process';
+  const exampleLabel = t('methodology.tab.mqm_dqf.example.title', lang);
   const exampleRows = [
-    { key: 'Identify',    val: lang === 'ja' ? '「surveys」が毎回正しく訳されない → 繰り返しエラー = 構造的問題' : '"surveys" mistranslated repeatedly → recurring error = structural issue' },
-    { key: 'Investigate', val: lang === 'ja' ? 'Term Baseに「survey = questionnaire」はあるが、Fuzzy matchがOFFのため複数形でヒットしない → Tools の問題' : 'TB has "survey = questionnaire" but Fuzzy match is OFF — plural forms not matching → Tools issue' },
-    { key: 'Fix',         val: lang === 'ja' ? 'Fuzzy matchをONにし、survey / surveys / surveying すべてTBにヒットするよう設定変更' : 'Enabled Fuzzy match; configured TB to catch survey / surveys / surveying' },
-    { key: 'Monitor',     val: lang === 'ja' ? '次プロジェクトで同エラーが出ないかトラッキング' : 'Track next project to confirm the error does not recur' },
+    { key: 'Identify',    val: t('methodology.tab.mqm_dqf.example.identify', lang) },
+    { key: 'Investigate', val: t('methodology.tab.mqm_dqf.example.investigate', lang) },
+    { key: 'Fix',         val: t('methodology.tab.mqm_dqf.example.fix', lang) },
+    { key: 'Monitor',     val: t('methodology.tab.mqm_dqf.example.monitor', lang) },
   ];
 
-  const stepColors = {
-    cat: { background: '#dbeafe', color: '#1e40af' },
-    mt:  { background: '#d1fae5', color: '#065f46' },
-    lc:  { background: '#fef3c7', color: '#92400e' },
-    pe:  { background: '#fce7f3', color: '#9d174d' },
-    t:   { background: '#ede9fe', color: '#4c1d95' },
   };
 
   const sectionBg = '#fdf8f0';
@@ -655,13 +742,13 @@ function Workflow2({ lang }) {
                     <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(46,46,110,0.08)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                       <div>
                         <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#9ca3af', marginBottom: '6px' }}>
-                          {lang === 'ja' ? '特徴' : 'How it works'}
+                          {t('methodology.tab.mqm_dqf.col.features', lang)}
                         </div>
                         <p style={{ fontSize: '13px', lineHeight: 1.65, color: '#4b5563', margin: 0 }}>{p.desc}</p>
                       </div>
                       <div>
                         <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#9ca3af', marginBottom: '6px' }}>
-                          {lang === 'ja' ? '向いているケース' : 'Best for'}
+                          {t('methodology.tab.mqm_dqf.col.best_for', lang)}
                         </div>
                         <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
                           {p.cases.map((c, k) => (
@@ -691,7 +778,7 @@ function Workflow2({ lang }) {
             </div>
             <div style={{ marginBottom: '16px' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#9ca3af', marginBottom: '8px' }}>
-                {lang === 'ja' ? '重大度レベル' : 'Severity Levels'}
+                {t('methodology.tab.mqm_dqf.col.severity', lang)}
               </div>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {severities.map((s, i) => (
@@ -724,16 +811,16 @@ function Workflow2({ lang }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(46,46,110,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>🤖</div>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{lang === 'ja' ? 'AIに委譲すること' : 'Delegate to AI'}</div>
-                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '速度・網羅性・一貫性' : 'Speed · Coverage · Consistency'}</div>
+                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{t('methodology.tab.ai_delegation.ai.heading', lang)}</div>
+                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{t('methodology.tab.ai_delegation.ai.subheading', lang)}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    lang === 'ja' ? '疲れずに全セグメントをスキャン' : 'Scan all segments without fatigue',
-                    lang === 'ja' ? '用語・一貫性・ロケール規則の検出' : 'Detect terminology, consistency, and locale issues',
-                    lang === 'ja' ? 'エラー箇所の優先順位付け（Severity分類）' : 'Prioritize errors by severity',
-                    lang === 'ja' ? '大量コンテンツの高速MT出力' : 'High-speed MT output for large volumes',
+                    t('methodology.tab.ai_delegation.ai.item.1', lang),
+                    t('methodology.tab.ai_delegation.ai.item.2', lang),
+                    t('methodology.tab.ai_delegation.ai.item.3', lang),
+                    t('methodology.tab.ai_delegation.ai.item.4', lang),
                   ].map((item, i) => (
                     <div key={i} style={{ background: '#fff', borderRadius: '8px', padding: '10px 12px', display: 'flex', alignItems: 'flex-start', gap: '10px', border: '1px solid rgba(46,46,110,0.07)' }}>
                       <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: blue, flexShrink: 0, marginTop: '5px' }} />
@@ -748,16 +835,16 @@ function Workflow2({ lang }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(201,168,124,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>👤</div>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{lang === 'ja' ? '人間が担うこと' : 'Keep with Humans'}</div>
-                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '判断・文脈・ブランド' : 'Judgment · Context · Brand'}</div>
+                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{t('methodology.tab.ai_delegation.human.heading', lang)}</div>
+                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{t('methodology.tab.ai_delegation.human.subheading', lang)}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    lang === 'ja' ? 'ニュアンス・ブランドボイスの判断' : 'Judging nuance and brand voice',
-                    lang === 'ja' ? '文化的適切さ・コンテキストの解釈' : 'Cultural appropriateness and context',
-                    lang === 'ja' ? 'AIフラグの最終確認と修正' : 'Final review and correction of AI flags',
-                    lang === 'ja' ? 'スタイルガイド・用語集の意思決定' : 'Style guide and glossary decisions',
+                    t('methodology.tab.ai_delegation.human.item.1', lang),
+                    t('methodology.tab.ai_delegation.human.item.2', lang),
+                    t('methodology.tab.ai_delegation.human.item.3', lang),
+                    t('methodology.tab.ai_delegation.human.item.4', lang),
                   ].map((item, i) => (
                     <div key={i} style={{ background: '#fff', borderRadius: '8px', padding: '10px 12px', display: 'flex', alignItems: 'flex-start', gap: '10px', border: '1px solid rgba(46,46,110,0.07)' }}>
                       <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: sand, flexShrink: 0, marginTop: '5px' }} />
@@ -771,27 +858,27 @@ function Workflow2({ lang }) {
             {/* 下段：選定のポイント */}
             <div style={{ background: 'rgba(255,255,255,0.55)', borderRadius: '14px', padding: '18px 20px', border: '1px solid rgba(46,46,110,0.1)' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#9ca3af', marginBottom: '12px' }}>
-                {lang === 'ja' ? '選定のポイント' : 'How to Decide'}
+                {t('methodology.tab.ai_delegation.col.how_to_decide', lang)}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
                 {[
                   {
-                    cond:   lang === 'ja' ? 'TMの充実度が高い'  : 'Strong TM exists',
-                    pill:   lang === 'ja' ? '→ AI委譲↑'        : '→ More AI',
+                    cond: t('methodology.tab.ai_delegation.decision.cond.1', lang),
+                    pill: t('methodology.tab.ai_delegation.decision.pill.1', lang), pillBg: blue,
                     pillBg: blue,
-                    result: lang === 'ja' ? 'パターン1 or 2'   : 'Pattern 1 or 2',
+                    result: t('methodology.tab.ai_delegation.decision.rec.1', lang),
                   },
                   {
-                    cond:   lang === 'ja' ? '品質基準が厳しい'  : 'High quality standards',
-                    pill:   lang === 'ja' ? '→ Human比率↑'     : '→ More Human',
+                    cond: t('methodology.tab.ai_delegation.decision.cond.2', lang),
+                    pill: t('methodology.tab.ai_delegation.decision.pill.2', lang), pillBg: sand,
                     pillBg: sand,
-                    result: lang === 'ja' ? 'パターン3 or 4'   : 'Pattern 3 or 4',
+                    result: t('methodology.tab.ai_delegation.decision.rec.2', lang),
                   },
                   {
-                    cond:   lang === 'ja' ? '納期・コスト優先'  : 'Speed or cost priority',
-                    pill:   lang === 'ja' ? '→ AI委譲↑'        : '→ More AI',
+                    cond: t('methodology.tab.ai_delegation.decision.cond.3', lang),
+                    pill: t('methodology.tab.ai_delegation.decision.pill.1', lang), pillBg: blue,
                     pillBg: blue,
-                    result: lang === 'ja' ? 'パターン2が最適'   : 'Pattern 2 recommended',
+                    result: t('methodology.tab.ai_delegation.decision.rec.3', lang),
                   },
                 ].map((card, i) => (
                   <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(46,46,110,0.08)' }}>
@@ -818,7 +905,7 @@ function Contact2({ lang }) {
         <div>
           <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: '12px', color: "rgb(201, 168, 124)" }}>Contact</div>
           <h2 style={{ fontFamily: 'Libre Baskerville', fontSize: 'clamp(28px,3.5vw,44px)', color: '#fff', lineHeight: 1.2, marginBottom: '20px' }}>
-            {lang === 'ja' ? '一緒に\n作りましょう' : 'Let\'s Build\nSomething Together'}
+            {t('contact.heading', lang)}
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '16px', lineHeight: 1.7 }}>
             {lang === 'ja' ?
@@ -841,11 +928,11 @@ function Contact2({ lang }) {
             <a href="https://share.hsforms.com/1lUquYKPlTzO3RNcWuKjlOwno84d" target="_blank"
             style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '16px 20px', background: '#fff', borderRadius: '12px', color: 'var(--blue)', fontWeight: 700, fontSize: '15px', border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.18)', transition: 'all .2s' }}
             onMouseEnter={(e) => {e.currentTarget.style.background = '#f0f4ff';e.currentTarget.style.transform = 'translateY(-2px)';e.currentTarget.style.boxShadow = '0 8px 24px rgba(249,123,80,0.4)';}} onMouseLeave={(e) => {e.currentTarget.style.background = '#fff';e.currentTarget.style.transform = '';e.currentTarget.style.boxShadow = '';}}>
-              <span style={{ fontSize: '20px' }}>📋</span> {lang === 'ja' ? 'お問い合わせフォーム ↗' : 'Contact Form ↗'}
+              <span style={{ fontSize: '20px' }}>📋</span> {t('contact.cta', lang)}
             </a>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', marginTop: '20px', textAlign: 'center' }}>
-            {lang === 'ja' ? '副業・フリーランス案件受付中 · Kobe · Available Remotely' : 'Available for remote freelance · Kobe'}
+            {t('contact.footnote', lang)}
           </p>
         </div>
       </div>
