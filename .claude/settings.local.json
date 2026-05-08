@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:\\\\Users\\\\hitom\\\\Desktop\\\\L10N docs\\\\hitomitkgalc.github.io\" diff --stat)",
+      "Bash(git -C \"c:\\\\Users\\\\hitom\\\\Desktop\\\\L10N docs\\\\hitomitkgalc.github.io\" add index.html)",
+      "Bash(git -C 'c:\\\\Users\\\\hitom\\\\Desktop\\\\L10N docs\\\\hitomitkgalc.github.io' commit -m ' *)",
+      "Bash(git -C \"c:\\\\Users\\\\hitom\\\\Desktop\\\\L10N docs\\\\hitomitkgalc.github.io\" push)"
+    ]
+  }
+}
