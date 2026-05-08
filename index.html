@@ -574,7 +574,7 @@ function Cases2({ lang }) {
                 </div>
                 <button onClick={() => setOpen(open === i ? null : i)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', color: 'var(--blue)', fontWeight: 600, padding: 0 }}>
-                  {open === i ? open === i ? t('cases.detail.collapse', lang) : t('cases.detail.expand', lang)}
+                  {open === i ? t('cases.detail.collapse', lang) : t('cases.detail.expand', lang)}
                 </button>
               </div>
               {open === i &&
