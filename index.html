@@ -863,24 +863,23 @@ function Workflow2({ lang }) {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
                 {[
                   {
-                    cond: t('methodology.tab.ai_delegation.decision.cond.1', lang),
-                    pill: t('methodology.tab.ai_delegation.decision.pill.1', lang), pillBg: blue,
+                    cond:   t('methodology.tab.ai_delegation.decision.cond.1', lang),
+                    pill:   t('methodology.tab.ai_delegation.decision.pill.1', lang),
                     pillBg: blue,
                     result: t('methodology.tab.ai_delegation.decision.rec.1', lang),
                   },
                   {
-                    cond: t('methodology.tab.ai_delegation.decision.cond.2', lang),
-                    pill: t('methodology.tab.ai_delegation.decision.pill.2', lang), pillBg: sand,
+                    cond:   t('methodology.tab.ai_delegation.decision.cond.2', lang),
+                    pill:   t('methodology.tab.ai_delegation.decision.pill.2', lang),
                     pillBg: sand,
                     result: t('methodology.tab.ai_delegation.decision.rec.2', lang),
                   },
                   {
-                    cond: t('methodology.tab.ai_delegation.decision.cond.3', lang),
-                    pill: t('methodology.tab.ai_delegation.decision.pill.1', lang), pillBg: blue,
+                    cond:   t('methodology.tab.ai_delegation.decision.cond.3', lang),
+                    pill:   t('methodology.tab.ai_delegation.decision.pill.3', lang),
                     pillBg: blue,
                     result: t('methodology.tab.ai_delegation.decision.rec.3', lang),
                   },
-                ].map((card, i) => (
                   <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(46,46,110,0.08)' }}>
                     <div style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px', lineHeight: 1.4 }}>{card.cond}</div>
                     <div style={{ display: 'inline-block', padding: '3px 10px', borderRadius: '999px', background: card.pillBg, color: '#fff', fontSize: '11px', fontWeight: 700, marginBottom: '8px' }}>{card.pill}</div>
