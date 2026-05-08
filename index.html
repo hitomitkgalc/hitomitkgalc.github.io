@@ -667,7 +667,6 @@ function Workflow2({ lang }) {
     { key: 'Monitor',     val: t('methodology.tab.mqm_dqf.example.monitor', lang) },
   ];
 
-  };
 
   const sectionBg = '#fdf8f0';
   const blue      = 'rgb(46, 46, 110)';
@@ -875,6 +874,7 @@ function Workflow2({ lang }) {
                     pillBg: blue,
                     result: t('methodology.tab.ai_delegation.decision.rec.3', lang),
                   },
+                ].map((card, i) => (
                   <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(46,46,110,0.08)' }}>
                     <div style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px', lineHeight: 1.4 }}>{card.cond}</div>
                     <div style={{ display: 'inline-block', padding: '3px 10px', borderRadius: '999px', background: card.pillBg, color: '#fff', fontSize: '11px', fontWeight: 700, marginBottom: '8px' }}>{card.pill}</div>
