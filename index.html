@@ -35,12 +35,7 @@
 
   /* ── Hero ── */
   #v2-about { flex-direction: column !important; min-height: unset !important; }
-  #v2-about > div:first-child {
-    width: 100% !important;
-    min-height: unset !important;
-    max-height: 320px !important;
-    padding: 20px 20px 56px !important;
-  }
+  #v2-about > div:first-child { display: none !important; }
   #v2-about > div:last-child { padding: 48px 20px 60px !important; }
   #v2-about h1 { font-size: clamp(32px, 8vw, 52px) !important; }
   #v2-about > div:last-child > div > div:first-child { flex-wrap: wrap !important; }
@@ -48,13 +43,14 @@
   /* ── Expertise ── */
   #v2-expertise .container > div:last-child { grid-template-columns: 1fr !important; gap: 0 !important; }
   #v2-expertise .container > div:first-child { position: static !important; }
+  #v2-expertise .container > div:last-child > div { grid-template-columns: 1fr !important; }
 
   /* ── Cases ── */
   #v2-cases .container > div:last-child { grid-template-columns: 1fr !important; }
 
   /* ── Workflow ── */
   /* Workflow cards 2x2 → 1col */
-  #v2-workflow .container > div:last-child > div:first-child { grid-template-columns: 1fr !important; }
+  #v2-workflow [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
   /* MQM cats 3col → 2col */
   #v2-workflow .container > div:last-child > div > div:first-child { grid-template-columns: 1fr 1fr !important; }
   /* AI Delegation 2col → 1col, Decision 3col → 1col */
