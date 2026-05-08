@@ -34,16 +34,24 @@
   nav > .container > div:last-child > a:not(:last-child) { display: none !important; }
 
   /* ── Hero ── */
-  #v2-about { flex-direction: column !important; min-height: unset !important; }
-  #v2-about > div:first-child { display: none !important; }
-  #v2-about > div:last-child { padding: 48px 20px 60px !important; }
+  #v2-about { flex-direction: column !important; min-height: unset !important; padding-top: 80px !important; }
+  #v2-about > div:first-child {
+    width: 100% !important;
+    height: 240px !important;
+    min-height: unset !important;
+    max-height: 240px !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  #v2-about > div:last-child { padding: 40px 20px 60px !important; }
   #v2-about h1 { font-size: clamp(32px, 8vw, 52px) !important; }
   #v2-about > div:last-child > div > div:first-child { flex-wrap: wrap !important; }
 
   /* ── Expertise ── */
-  #v2-expertise .container > div:last-child { grid-template-columns: 1fr !important; gap: 0 !important; }
-  #v2-expertise .container > div:first-child { position: static !important; }
-  #v2-expertise .container > div:last-child > div { grid-template-columns: 1fr !important; }
+  #v2-expertise .container > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+  #v2-expertise .container > div > div:first-child { position: static !important; width: 100% !important; }
+  #v2-expertise .container > div > div:last-child { width: 100% !important; }
+  #v2-expertise .container > div > div:last-child > div { grid-template-columns: 1fr !important; }
 
   /* ── Cases ── */
   #v2-cases .container > div:last-child { grid-template-columns: 1fr !important; }
