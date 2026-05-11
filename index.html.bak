@@ -186,7 +186,7 @@ function Nav2({ lang }) {
           onMouseEnter={(e) => e.target.style.opacity = 1} onMouseLeave={(e) => e.target.style.opacity = .65}>{l}</a>
           )}
           <a href="#v2-contact" style={{ background: 'var(--peach)', color: '#fff', padding: '9px 22px', borderRadius: '999px', fontSize: '13px', fontWeight: 600, backgroundColor: "rgb(201, 168, 124)" }}>
-            {lang === 'ja' ? 'お問い合わせ' : 'Let\'s Talk'}
+            {lang === 'ja' ? '相談する' : 'Let\'s Talk'}
           </a>
         </div>
       </div>
@@ -307,7 +307,7 @@ function Hero2({ lang }) {
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: '17px', lineHeight: 1.8, maxWidth: '480px', marginBottom: '16px' }}>
             {lang === 'ja' ?
-            'HubSpot Japanで営業・CSの経験を持つUIローカリゼーションスペシャリストとして、文化と市場の知見をビジネス成果に変換。—CVR+51%・収益5%成長など実績を積み上げながら、言語×UX×ビジネスを統合し、日本市場への橋をかけます。' :
+            'HubSpot JapanでUI翻訳・LQA・A/Bテスト改善を担当。言語×UX×ビジネス成果の三角形を理解し、日本市場への橋をかけます。' :
             'UI Localization Specialist at HubSpot Japan with a sales and CS background. I turn cultural and market insight into measurable product outcomes — from +51% CVR uplift to 5% revenue growth.'}
           </p>
           <blockquote style={{ borderLeft: '3px solid var(--blue)', paddingLeft: '20px', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '40px', fontSize: '16px', fontFamily: '"Libre Baskerville"' }}>
@@ -340,9 +340,9 @@ function Hero2({ lang }) {
 /* ── Expertise V2 ─────────────────────────────────────────────── */
 function Expertise2({ lang }) {
   const areas = [
-  { n: '01', title: lang === 'ja' ? 'SaaS UI/UX ローカリゼーション' : 'SaaS UI/UX Localization', desc: lang === 'ja' ? 'UI文字列翻訳、用語管理、アプリ内QAテストまで。文字数・コンテキスト・ユーザーフローを踏まえた、製品品質に直結する日本語ローカリゼーション。' : 'UI string translation, terminology management, in-app QA testing. Product-quality Japanese localization that accounts for character limits, context, and user flows.' },
-  { n: '02', title: lang === 'ja' ? 'マーケティング翻訳・トランスクリエーション' : 'Marketing Transcreation', desc: lang === 'ja' ? '日本語ユーザーに響くブランドボイスとマーケティングコピーを、文化的深度と検索の可視性も意識して適応。タグラインのトランスクリエーションからSEO/AEO最適化したメタコンテンツまで、日本人の検索行動とユーザー心理に根ざした翻訳を提供。' : 'Adapting brand voice and marketing copy for Japanese audiences — with cultural depth and search visibility in mind. From tagline transcreation to SEO/AEO-optimized meta content, grounded in Japanese search behavior and user psychology.' },
-  { n: '03', title: lang === 'ja' ? 'LQA・AI翻訳品質評価' : 'AI-Powered Localization Workflow', desc: lang === 'ja' ? 'LLMプロンプトとQA自動化を活用した、効率的なローカライゼーションワークフローを構築。スタイルガイドで学習させた機械翻訳アウトプットから構造化されたエラー分類まで―ニュアンスを損なうことなく、人手による修正負荷を軽減。' : 'Building scalable localization workflows powered by LLM prompts and QA automation. From Style Guide-trained MT output to structured error categorization — reducing post-edit effort without sacrificing nuance.' }];
+  { n: '01', title: lang === 'ja' ? 'SaaS UI/UX ローカリゼーション' : 'SaaS UI/UX Localization', desc: lang === 'ja' ? 'UIストリング翻訳、用語管理、インアプリQAテスト、TMSワークフロー構築まで。文字数・コンテキスト・ユーザーフローを踏まえた製品品質直結の日本語化。' : 'UI string translation, terminology management, in-app QA testing. Product-quality Japanese localization that accounts for character limits, context, and user flows.' },
+  { n: '02', title: lang === 'ja' ? 'マーケティング翻訳・トランスクリエーション' : 'Marketing Transcreation', desc: lang === 'ja' ? '英語のブランドボイス・感情的インパクトを日本語で再現。文化的含意・言語構造・ターゲット心理まで踏み込んだ、響く翻訳。' : 'Adapting brand voice and marketing copy for Japanese audiences — with cultural depth and search visibility in mind. From tagline transcreation to SEO/AEO-optimized meta content, grounded in Japanese search behavior and user psychology.' },
+  { n: '03', title: lang === 'ja' ? 'LQA・AI翻訳品質評価' : 'AI-Powered Localization Workflow', desc: lang === 'ja' ? 'DeepL、GPT、Claudeなど主要AI翻訳ツールの品質評価。13言語以上のベンダーQAサポート・エラー分類・一貫性監査。' : 'Quality evaluation of AI-MT tools (DeepL, GPT, Claude). Vendor QA support across 13+ languages with error categorization and consistency audits.' }];
 
   return (
     <section id="v2-expertise" style={{ padding: '100px 0', background: 'var(--white)', backgroundColor: "rgb(247, 242, 234)" }}>
@@ -401,7 +401,7 @@ function Cases2({ lang }) {
 
     insight: lang === 'ja' ? 'Sales × CS insight' : 'Sales × CS insight',
     detail: lang === 'ja' ?
-    '日本語ユーザーのサインアップCVR（16%）が英語（25%）を大幅に下回る問題をローカリゼーション観点から分析。電話番号・URL入力の「任意」表示改善と、入力目的を説明するオーバーレイ等を提案。North Star指標（Free→Starter有料プラン転換）が51%改善（有意）。さらに「任意化による営業データ欠損リスク」の副作用の可能性も指摘し、ローカリゼーションと営業・CSの両知見を持つからこそ見えた構造的トレードオフとして、コンテンツデザインチームに提言。' :
+    '日本語ユーザーのサインアップCVR（16.6%）が英語（24.9%）を大幅に下回る問題をローカリゼーション観点から分析。電話番号・URL入力の「任意」表示改善と、入力目的を説明するオーバーレイを提案。North Star指標（Free→Starter転換）が51%改善（有意）。さらに「任意化による営業データ欠損リスク」を指摘し、構造的トレードオフをクライアントに提言。' :
     'Analyzed Japan signup CVR gap from a localization lens. Proposed optional-field callouts and pre-form overlay. North Star metric improved 51% (statistically significant). Also flagged downstream lead qualification risk — a structural trade-off only visible through combined localization + sales expertise.'
   },
   {
@@ -409,7 +409,7 @@ function Cases2({ lang }) {
     period: 'Feb 2021 – May 2023',
     tag: 'Localization × ML Training Data',
     title: lang === 'ja' ?
-    '150%納品速度改善・5%売上増：Amazon Japan カタログ機械学習モデルのローカライズ' :
+    '150%高速化・5%増収：Amazon Japan MLモデルのローカライズ' :
     '150% faster, 5% more revenue: Amazon Japan ML model localization',
     stats: [
     { value: '+150%', label: lang === 'ja' ? 'Velocity\nデータ納品速度' : 'Velocity\nData delivery' },
@@ -418,7 +418,7 @@ function Cases2({ lang }) {
 
     insight: lang === 'ja' ? 'Cultural insight' : 'Cultural insight',
     detail: lang === 'ja' ?
-    'ATRIAプロジェクト：AIカタログ分類機械学習モデルを日本市場向けにローカライズ。英語圏の「代替性ベース分類」が日本食文化や生活文化に適用できない事例を全カテゴリで検証。EUデータサイエンティストに日本固有の分類基準をフィードバックし、機械学習のデータ分類品質を向上。EU市場30〜40%のエラー率を大幅に下回る15%までの削減を達成。Q3 2022 Amazon ADS Most Valuable Contribution受賞。' :
+    'ATRIAプロジェクト：AIカタログ分類を日本市場向けにローカライズ。英語圏の「代替性ベース分類」が日本食文化に合わない事例（うどん≠そうめん）を全カテゴリで検証。EUデータサイエンティストに日本固有の分類基準をフィードバックし、MLデータ品質を向上。EU市場30〜40%を大幅に下回る15%を達成。Q3 2022 Most Valuable Contribution受賞。' :
     'ATRIA project: localized AI catalog classification for Japan. Audited English substitutability logic across all categories (e.g., udon ≠ sōmen). Fed Japan-specific standards to EU data scientists. Achieved 15% error rate vs 30–40% in EU. Awarded Most Valuable Contribution Q3 2022.'
   }];
 
@@ -845,7 +845,7 @@ function Contact2({ lang }) {
             </a>
           </div>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', marginTop: '20px', textAlign: 'center' }}>
-            {lang === 'ja' ? '副業・フリーランス案件受付中 · Kobe' : 'Available for remote freelance · Kobe'}
+            {lang === 'ja' ? '副業・フリーランス案件受付中 · Kobe · Available Remotely' : 'Available for remote freelance · Kobe'}
           </p>
         </div>
       </div>
