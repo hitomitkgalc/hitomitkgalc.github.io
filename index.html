@@ -351,7 +351,7 @@ function Expertise2({ lang }) {
           <div style={{ position: 'static' }}>
             <div className="label">{lang === 'ja' ? '専門領域' : 'Expertise'}</div>
             <h2 style={{ fontSize: 'clamp(26px,2.8vw,36px)', color: 'var(--blue)', lineHeight: 1.2 }}>
-              {lang === 'ja' ? '3つの\n専門領域' : 'Three Core\nCapabilities'}
+              {lang === 'ja' ? '3つの専門領域' : 'Three Core\nCapabilities'}
             </h2>
             <p style={{ color: 'var(--muted)', fontSize: '14px', lineHeight: 1.7, marginTop: '16px' }}>
               {lang === 'ja' ?
@@ -396,7 +396,7 @@ function Cases2({ lang }) {
     'SignUp CVR +51%改善：ローカリゼーション主導のA/Bテスト' :
     'SignUp CVR uplift: +51% via localization-driven A/B test',
     stats: [
-    { value: '+51%', label: lang === 'ja' ? 'Free→Starter\n転換率' : 'Free→Starter\nconversion' },
+    { value: '+51%', label: lang === 'ja' ? '無料→有料プラン\n転換率' : 'Free→Starter\nconversion' },
     { value: '16%→19%', label: lang === 'ja' ? 'サインアップCVR' : 'Signup CVR' }],
 
     insight: lang === 'ja' ? 'Sales × CS insight' : 'Sales × CS insight',
@@ -413,7 +413,7 @@ function Cases2({ lang }) {
     '150% faster, 5% more revenue: Amazon Japan ML model localization',
     stats: [
     { value: '+150%', label: lang === 'ja' ? 'Velocity\nデータ納品速度' : 'Velocity\nData delivery' },
-    { value: '+5%', label: lang === 'ja' ? '収益向上\n（消耗品）' : 'Revenue uplift\n(consumables)' },
+    { value: '+5%', label: lang === 'ja' ? '収益向上\n（消耗品カテゴリ）' : 'Revenue uplift\n(consumables)' },
     { value: '15%', label: lang === 'ja' ? 'エラー率\n(EU比30〜40%)' : 'Error rate\n(vs 30–40% EU)' }],
 
     insight: lang === 'ja' ? 'Cultural insight' : 'Cultural insight',
@@ -430,9 +430,9 @@ function Cases2({ lang }) {
       <GridLines opacity={0.05} />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ marginBottom: '48px' }}>
-          <div className="label">{lang === 'ja' ? 'ケーススタディ' : 'Case studies'}</div>
+          <div className="label">{lang === 'ja' ? 'Case studies' : 'Case studies'}</div>
           <h2 style={{ fontSize: 'clamp(28px,3vw,42px)', color: 'var(--blue)' }}>
-            {lang === 'ja' ? '数字で示せる貢献' : 'Localization that moved the needle'}
+            {lang === 'ja' ? '数字で示す貢献' : 'Localization that moved the needle'}
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
