@@ -493,22 +493,22 @@ function Workflow2({ lang }) {
     heading: lang === 'ja' ? 'AI × Human ローカリゼーション\n品質フレームワーク'
                            : 'AI × Human Localization\nQuality Framework',
     sub:     lang === 'ja'
-      ? '翻訳するだけでなく、品質をどう設計・担保するかが私の強みです。プロジェクト条件に応じたワークフロー設計とQA基準の整備を支援します。'
+      ? '単なる翻訳だけでなく、品質をどう設計・担保するかが私の強みです。プロジェクト条件に応じたワークフロー設計とQA基準の整備を支援します。'
       : 'My strength lies not just in translation, but in designing and ensuring quality. I help teams select the right workflow and build QA standards tailored to their project conditions.',
-    tab1:    lang === 'ja' ? 'AI Workflow 4パターン'      : 'AI Workflow 4 Patterns',
-    tab2:    lang === 'ja' ? 'MQM-DQF 品質フレームワーク' : 'MQM-DQF Quality Framework',
-    tab3:    lang === 'ja' ? 'AI Delegation'            : 'AI Delegation',
+    tab1:    lang === 'ja' ? 'AI Workflow 4パターン例'      : 'AI Workflow 4 Patterns',
+    tab2:    lang === 'ja' ? 'MQM-DQF品質フレームワーク' : 'MQM-DQF Quality Framework',
+    tab3:    lang === 'ja' ? 'AIへのタスク委任'            : 'AI Delegation',
   };
 
   const patterns = [
     {
       num: '1',
-      title: lang === 'ja' ? 'CAT + MT + AIR + PE — 標準型'   : 'CAT + MT + AIR + PE — Balanced',
+      title: lang === 'ja' ? 'CAT + MT + AIR + PE — バランス型'   : 'CAT + MT + AIR + PE — Balanced',
       tag:   lang === 'ja' ? 'バランス重視'                   : 'Balanced',
       steps: ['CAT', lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? 'AI Review' : 'AI Review', lang === 'ja' ? '人による校正' : 'Human Post Edit'],
       stepTypes: ['cat', 'mt', 'lc', 'pe'],
       desc:  lang === 'ja'
-        ? 'TMのマッチ率が高いセグメントはCATで処理し、残りをMT+LCに流す。TM資産を最大活用しながらコスト・品質・スピードをバランスよく確保。'
+        ? 'TMのマッチ率が高いセグメントはCATで処理し、残りを機械翻訳+AIレビューに流す。TM資産を最大活用しながらコスト・品質・スピードをバランスよく確保。'
         : 'High-TM-match segments handled by CAT; the rest flows to MT+LC. Maximizes TM assets while balancing cost, quality, and speed.',
       cases: lang === 'ja'
         ? ['翻訳メモリ（TM）が充実している', '継続的なプロジェクト・反復コンテンツ', 'コスト・品質・スピードをバランスよく求める']
@@ -521,7 +521,7 @@ function Workflow2({ lang }) {
       steps: [lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? 'AI Review' : 'AI Review', lang === 'ja' ? '人による校正' : 'Human Post Edit'],
       stepTypes: ['mt', 'lc', 'pe'],
       desc:  lang === 'ja'
-        ? 'TM省略により高速化。MT+LCでエラーを事前スキャンし、人間はフラグ箇所のみ集中。PEの工数を最小化する。'
+        ? 'TM省略により高速化。機械翻訳+AIレビューでエラーを事前スキャンし、人間はフラグ箇所のみ集中。人手による校正の工数を最小化する。'
         : 'Faster without TM. MT+LC pre-scans for errors; humans focus only on flagged segments, minimizing PE effort.',
       cases: lang === 'ja'
         ? ['TMが少ない・新規プロジェクト', '短納期・大量コンテンツ', 'マーケティングコンテンツ・ブログ記事']
@@ -534,7 +534,7 @@ function Workflow2({ lang }) {
       steps: [lang === 'ja' ? '機械翻訳' : 'Machine Translation', lang === 'ja' ? '人による校正' : 'Human Post Edit', lang === 'ja' ? 'AI Review' : 'AI Review'],
       stepTypes: ['mt', 'pe', 'lc'],
       desc:  lang === 'ja'
-        ? '人間PEの後にLCが「最終の目」として機能。疲労・見落としによるエラーをAIが検知し、品質を担保する。'
+        ? '機械翻訳→人による校正の後にAIが「最終の目」として機能。疲労・見落としによるエラーをAIが検知し、品質を担保する。'
         : 'LC acts as a final safety net after human PE, catching fatigue-related errors that humans miss.',
       cases: lang === 'ja'
         ? ['人間が主だが最終確認をAIに任せたい', '長文・反復作業で疲労が蓄積しやすい案件', 'UI文字列・製品ドキュメント']
@@ -544,10 +544,10 @@ function Workflow2({ lang }) {
       num: '4',
       title: lang === 'ja' ? 'T + AIR — 品質最重視型'          : 'T + AIR — Quality-First',
       tag:   lang === 'ja' ? '最高品質'                       : 'Highest Quality',
-      steps: [lang === 'ja' ? '人間翻訳' : 'Human Translation', lang === 'ja' ? 'AI Review' : 'AI Review'],
+      steps: [lang === 'ja' ? '人による翻訳' : 'Human Translation', lang === 'ja' ? 'AI Review' : 'AI Review'],
       stepTypes: ['t', 'lc'],
       desc:  lang === 'ja'
-        ? 'MTを使わず人間翻訳を基本とし、LCが一貫性・用語・ロケール規則を最終確認。MTの影響を避けたいコンテンツに。'
+        ? '機械翻訳を使わず人による一次翻訳を基本とし、LCが一貫性・用語・形式エラーを最終確認。機械翻訳ミスの影響を避けたいコンテンツに。'
         : 'Human translation as the base, with LC confirming consistency, terminology, and locale rules. For content where MT influence is unacceptable.',
       cases: lang === 'ja'
         ? ['医療・法律・金融など高精度が必要', 'ブランドボイスが重要なコンテンツ', 'MTの品質が信頼できない言語ペア']
@@ -559,16 +559,16 @@ function Workflow2({ lang }) {
     { title: 'Accuracy',     desc: lang === 'ja' ? '意味の訳し・欠落。原文の意図が正確に伝わっているか'       : 'Mistranslation or omission. Whether source intent is accurately conveyed.' },
     { title: 'Terminology',  desc: lang === 'ja' ? '用語の不一致。製品用語集・スタイルガイドとの整合性'       : 'Inconsistent terms. Alignment with product glossary and style guide.' },
     { title: 'Fluency',      desc: lang === 'ja' ? '読みやすさ・自然さ。ターゲット言語としての流暢性'         : 'Readability and naturalness in the target language.' },
-    { title: 'Style',        desc: lang === 'ja' ? '文体・トーン。ブランドボイスやトーンオブボイスとの一致'   : 'Tone and voice. Alignment with brand guidelines.' },
+    { title: 'Style',        desc: lang === 'ja' ? '文体・トーン。ブランドボイスやトンマナとの一致'   : 'Tone and voice. Alignment with brand guidelines.' },
     { title: 'Design',       desc: lang === 'ja' ? 'レイアウト崩れ。文字列長・改行・UI要素への影響'           : 'Layout issues. Impact of string length on UI elements.' },
-    { title: 'Locale conv.', desc: lang === 'ja' ? '日付・通貨・単位など、ロケール固有の表記規則'             : 'Date, currency, units — locale-specific formatting conventions.' },
+    { title: 'Locale conv.', desc: lang === 'ja' ? '日付・通貨・単位など、国・地域固有の表記規則'             : 'Date, currency, units — locale-specific formatting conventions.' },
   ];
 
   const severities = [
-    { label: lang === 'ja' ? 'Neutral — 影響なし'         : 'Neutral — No impact',          style: { background: '#f3f4f6', color: '#6b7280' } },
+    { label: lang === 'ja' ? 'Neutral — 影響なし・好みの問題'         : 'Neutral — No impact',          style: { background: '#f3f4f6', color: '#6b7280' } },
     { label: lang === 'ja' ? 'Minor — UX影響小'           : 'Minor — Low UX impact',        style: { background: '#dbeafe', color: '#1e3a8a' } },
-    { label: lang === 'ja' ? 'Major — 誤解・機能影響あり' : 'Major — Comprehension risk',    style: { background: '#fef3c7', color: '#92400e' } },
-    { label: lang === 'ja' ? 'Critical — ブランド損傷'    : 'Critical — Brand / legal risk', style: { background: '#fee2e2', color: '#991b1b' } },
+    { label: lang === 'ja' ? 'Major — 誤解リスク・機能影響あり' : 'Major — Comprehension risk',    style: { background: '#fef3c7', color: '#92400e' } },
+    { label: lang === 'ja' ? 'Critical — ブランド損傷・法的リスク'    : 'Critical — Brand / legal risk', style: { background: '#fee2e2', color: '#991b1b' } },
   ];
 
   const exampleLabel = lang === 'ja' ? '実例：Fuzzy matchバグの分析プロセス' : 'Example: Fuzzy Match Bug — RCA Process';
@@ -724,16 +724,16 @@ function Workflow2({ lang }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(46,46,110,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>🤖</div>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{lang === 'ja' ? 'AIに委譲すること' : 'Delegate to AI'}</div>
-                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '速度・網羅性・一貫性' : 'Speed · Coverage · Consistency'}</div>
+                    <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{lang === 'ja' ? 'AIに任せること' : 'Delegate to AI'}</div>
+                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '処理速度・網羅性・一貫性' : 'Speed · Coverage · Consistency'}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    lang === 'ja' ? '疲れずに全セグメントをスキャン' : 'Scan all segments without fatigue',
-                    lang === 'ja' ? '用語・一貫性・ロケール規則の検出' : 'Detect terminology, consistency, and locale issues',
-                    lang === 'ja' ? 'エラー箇所の優先順位付け（Severity分類）' : 'Prioritize errors by severity',
-                    lang === 'ja' ? '大量コンテンツの高速MT出力' : 'High-speed MT output for large volumes',
+                    lang === 'ja' ? '全セグメントをスキャンして見落としを防ぐ' : 'Scan all segments without fatigue',
+                    lang === 'ja' ? '用語・一貫性・形式エラーの抽出' : 'Detect terminology, consistency, and locale issues',
+                    lang === 'ja' ? 'エラー箇所の優先順位付け（重大性の分類）' : 'Prioritize errors by severity',
+                    lang === 'ja' ? '大量コンテンツの機械翻訳での高速出力' : 'High-speed MT output for large volumes',
                   ].map((item, i) => (
                     <div key={i} style={{ background: '#fff', borderRadius: '8px', padding: '10px 12px', display: 'flex', alignItems: 'flex-start', gap: '10px', border: '1px solid rgba(46,46,110,0.07)' }}>
                       <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: blue, flexShrink: 0, marginTop: '5px' }} />
@@ -749,13 +749,13 @@ function Workflow2({ lang }) {
                   <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(201,168,124,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>👤</div>
                   <div>
                     <div style={{ fontSize: '14px', fontWeight: 700, color: blue }}>{lang === 'ja' ? '人間が担うこと' : 'Keep with Humans'}</div>
-                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '判断・文脈・ブランド' : 'Judgment · Context · Brand'}</div>
+                    <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>{lang === 'ja' ? '判断・文脈・ブランド定義' : 'Judgment · Context · Brand'}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {[
-                    lang === 'ja' ? 'ニュアンス・ブランドボイスの判断' : 'Judging nuance and brand voice',
-                    lang === 'ja' ? '文化的適切さ・コンテキストの解釈' : 'Cultural appropriateness and context',
+                    lang === 'ja' ? 'ニュアンス・ブランドボイスの適否' : 'Judging nuance and brand voice',
+                    lang === 'ja' ? '文化的適切さ・文脈の解釈' : 'Cultural appropriateness and context',
                     lang === 'ja' ? 'AIフラグの最終確認と修正' : 'Final review and correction of AI flags',
                     lang === 'ja' ? 'スタイルガイド・用語集の意思決定' : 'Style guide and glossary decisions',
                   ].map((item, i) => (
@@ -771,7 +771,7 @@ function Workflow2({ lang }) {
             {/* 下段：選定のポイント */}
             <div style={{ background: 'rgba(255,255,255,0.55)', borderRadius: '14px', padding: '18px 20px', border: '1px solid rgba(46,46,110,0.1)' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#9ca3af', marginBottom: '12px' }}>
-                {lang === 'ja' ? '選定のポイント' : 'How to Decide'}
+                {lang === 'ja' ? '判断のポイント' : 'How to Decide'}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
                 {[
@@ -818,7 +818,7 @@ function Contact2({ lang }) {
         <div>
           <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: '12px', color: "rgb(201, 168, 124)" }}>Contact</div>
           <h2 style={{ fontFamily: 'Libre Baskerville', fontSize: 'clamp(28px,3.5vw,44px)', color: '#fff', lineHeight: 1.2, marginBottom: '20px' }}>
-            {lang === 'ja' ? '一緒に\n作りましょう' : 'Let\'s Build\nSomething Together'}
+            {lang === 'ja' ? 'お気軽に\nご相談ください' : 'Let\'s Build\nSomething Together'}
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '16px', lineHeight: 1.7 }}>
             {lang === 'ja' ?
