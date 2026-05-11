@@ -349,7 +349,7 @@ function Expertise2({ lang }) {
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '80px', alignItems: 'start' }}>
           <div style={{ position: 'static' }}>
-            <div className="label">{lang === 'ja' ? '専門領域' : 'Expertise'}</div>
+            <div className="label">{lang === 'ja' ? 'EXPERTISE' : 'Expertise'}</div>
             <h2 style={{ fontSize: 'clamp(26px,2.8vw,36px)', color: 'var(--blue)', lineHeight: 1.2 }}>
               {lang === 'ja' ? '3つの専門領域' : 'Three Core\nCapabilities'}
             </h2>
@@ -547,7 +547,7 @@ function Workflow2({ lang }) {
       steps: [lang === 'ja' ? '人による翻訳' : 'Human Translation', lang === 'ja' ? 'AI Review' : 'AI Review'],
       stepTypes: ['t', 'lc'],
       desc:  lang === 'ja'
-        ? '機械翻訳を使わず人による一次翻訳を基本とし、LCが一貫性・用語・形式エラーを最終確認。機械翻訳ミスの影響を避けたいコンテンツに。'
+        ? '機械翻訳を使わず人による一次翻訳を基本とし、AI Reviewが一貫性・用語・形式エラーを最終確認。機械翻訳ミスの影響を避けたいコンテンツに。'
         : 'Human translation as the base, with LC confirming consistency, terminology, and locale rules. For content where MT influence is unacceptable.',
       cases: lang === 'ja'
         ? ['医療・法律・金融など高精度が必要', 'ブランドボイスが重要なコンテンツ', 'MTの品質が信頼できない言語ペア']
@@ -556,7 +556,7 @@ function Workflow2({ lang }) {
   ];
 
   const mqmCats = [
-    { title: 'Accuracy',     desc: lang === 'ja' ? '意味の訳し・欠落。原文の意図が正確に伝わっているか'       : 'Mistranslation or omission. Whether source intent is accurately conveyed.' },
+    { title: 'Accuracy',     desc: lang === 'ja' ? '誤訳・欠落。原文の意図が正確に伝わっているか'       : 'Mistranslation or omission. Whether source intent is accurately conveyed.' },
     { title: 'Terminology',  desc: lang === 'ja' ? '用語の不一致。製品用語集・スタイルガイドとの整合性'       : 'Inconsistent terms. Alignment with product glossary and style guide.' },
     { title: 'Fluency',      desc: lang === 'ja' ? '読みやすさ・自然さ。ターゲット言語としての流暢性'         : 'Readability and naturalness in the target language.' },
     { title: 'Style',        desc: lang === 'ja' ? '文体・トーン。ブランドボイスやトンマナとの一致'   : 'Tone and voice. Alignment with brand guidelines.' },
@@ -573,8 +573,8 @@ function Workflow2({ lang }) {
 
   const exampleLabel = lang === 'ja' ? '実例：Fuzzy matchバグの分析プロセス' : 'Example: Fuzzy Match Bug — RCA Process';
   const exampleRows = [
-    { key: 'Identify',    val: lang === 'ja' ? '「surveys」が毎回正しく訳されない → 繰り返しエラー = 構造的問題' : '"surveys" mistranslated repeatedly → recurring error = structural issue' },
-    { key: 'Investigate', val: lang === 'ja' ? 'Term Baseに「survey = questionnaire」はあるが、Fuzzy matchがOFFのため複数形でヒットしない → Tools の問題' : 'TB has "survey = questionnaire" but Fuzzy match is OFF — plural forms not matching → Tools issue' },
+    { key: 'Identify',    val: lang === 'ja' ? '「surveys（アンケート）」が毎回正しく訳されない → 繰り返しエラー = 構造的問題' : '"surveys" mistranslated repeatedly → recurring error = structural issue' },
+    { key: 'Investigate', val: lang === 'ja' ? 'Term Baseに「survey = アンケート」はあるが、Fuzzy matchがOFFのため複数形でヒットしない → ツールの問題' : 'TB has "survey = questionnaire" but Fuzzy match is OFF — plural forms not matching → Tools issue' },
     { key: 'Fix',         val: lang === 'ja' ? 'Fuzzy matchをONにし、survey / surveys / surveying すべてTBにヒットするよう設定変更' : 'Enabled Fuzzy match; configured TB to catch survey / surveys / surveying' },
     { key: 'Monitor',     val: lang === 'ja' ? '次プロジェクトで同エラーが出ないかトラッキング' : 'Track next project to confirm the error does not recur' },
   ];
@@ -818,7 +818,7 @@ function Contact2({ lang }) {
         <div>
           <div style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: '12px', color: "rgb(201, 168, 124)" }}>Contact</div>
           <h2 style={{ fontFamily: 'Libre Baskerville', fontSize: 'clamp(28px,3.5vw,44px)', color: '#fff', lineHeight: 1.2, marginBottom: '20px' }}>
-            {lang === 'ja' ? 'お気軽に\nご相談ください' : 'Let\'s Build\nSomething Together'}
+            {lang === 'ja' ? 'お気軽にご相談ください' : 'Let\'s Build\nSomething Together'}
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '16px', lineHeight: 1.7 }}>
             {lang === 'ja' ?
