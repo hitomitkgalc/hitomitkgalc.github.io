@@ -171,7 +171,7 @@ function Nav2({ lang }) {
   const [sc, setSc] = useState(false);
   useEffect(() => {const h = () => setSc(window.scrollY > 60);window.addEventListener('scroll', h);return () => window.removeEventListener('scroll', h);}, []);
   const links = lang === 'ja' ?
-  [['about', 'About'], ['expertise', '専門'], ['cases', '実績'], ['methodology', 'メソドロジー'], ['contact', 'Contact']] :
+  [['about', 'About'], ['expertise', 'Expertise'], ['cases', 'Cases'], ['methodology', 'Methodology'], ['contact', 'Contact']] :
   [['about', 'About'], ['expertise', 'Expertise'], ['cases', 'Cases'], ['methodology', 'Methodology'], ['contact', 'Contact']];
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, background: sc ? 'rgba(250,252,255,0.96)' : 'transparent', backdropFilter: sc ? 'blur(16px)' : 'none', borderBottom: sc ? '1px solid var(--border)' : 'none', transition: 'all .3s', padding: '18px 0' }}>
